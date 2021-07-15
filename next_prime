@@ -1,0 +1,14 @@
+/* Get the next prime number!
+
+You will get a numbern (>= 0) and your task is to find the next prime number.
+
+Make sure to optimize your code: there will numbers tested up to about 10^12.
+*/
+
+function nextPrime(n) {
+  let res = n > 1 ? n + 1 : 2;
+  for (let i = 2; i * i <= res; i++)
+    if (res % i === 0)
+      return nextPrime(res);
+  return res;
+}
